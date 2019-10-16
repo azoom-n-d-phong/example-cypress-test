@@ -34,7 +34,7 @@ export default {
   },
   async mounted() {
     const ky = require('ky').default
-    const res = await ky('https://jsonplaceholder.typicode.com/posts/1').json()
+    const res = await ky('https://jsonplaceholder.typicode.com/posts/1').json().catch(e => console.log(e.message))
     const res2 = await ky('https://jsonplaceholder.typicode.com/posts/2').json()
     console.log(res)
     console.log(res2)
